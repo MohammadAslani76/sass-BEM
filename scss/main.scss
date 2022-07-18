@@ -1,0 +1,479 @@
+@import "generic/variables";
+@import "generic/mixin";
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat , sans-serif;
+  border: 0;
+  outline: 0;
+  text-decoration: none;
+}
+//Global class
+.pointer{
+  cursor: pointer;
+}
+.container{
+  width: 90%;
+  margin: 0 auto;
+}
+.transition{
+  transition: all .3s;
+}
+.relative{
+  position: relative;
+}
+.my{
+  margin: 2em 0;
+}
+.mb{
+  margin-bottom: 7em;
+}
+.p{
+  padding: 1em;
+}
+body{overflow-x: hidden}
+//Header
+header{
+  background: url("../assets/img/bg.png") fixed center;
+}
+.openMenu{
+  padding: 1em 0;
+  display: none;
+  i{
+    font-size: 1.5rem;
+    @extend .pointer;
+  }
+}
+.menu{
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $whiteColor;
+  width: 288px;
+  height: 100vh;
+  z-index: 1000;
+  display: none;
+  &__header{
+    @include flex;
+    background: url("../assets/img/bg.png");
+    @extend .p;
+    i{
+      font-size: 1.5rem;
+    }
+  }
+  &__main{
+    height: calc(100vh - 90.66px);
+    &--link{
+      @extend .p;
+      @extend .pointer;
+      &:hover{
+        background: url("../assets/img/bg.png");
+      }
+      &:hover a{
+        color: $primaryColor;
+      }
+      a{
+        color: $blackColor;
+        @include font;
+      }
+    }
+  }
+  &__footer{
+    width: 100%;
+    &--btn{
+      width: 100%;
+      @include btn;
+    }
+  }
+}
+.navbar{
+  @include flex;
+  padding: 1em 0;
+  &__brand{
+    @include font;
+    font-size: 1.2rem;
+  }
+  &__link{
+    @include font;
+    @extend .transition;
+    font-size: .9rem;
+    &:hover{
+      color: $primaryColor;
+    }
+  }
+  &__btn{
+    @include btn;
+    font-size: .7rem;
+  }
+}
+.banner{
+  @include flex;
+  &__textContainer{
+    @include flexColumn;
+    width: 50%;
+    &--title{
+      font-size: 80px;
+      span{
+        color: $primaryColor;
+      }
+    }
+    &--text{
+      color: $darkGrayColor;
+    }
+    &--btn{
+      @include btn;
+      @include flex;
+      width: 11em;
+    }
+  }
+  &__img{
+    @extend .relative;
+    @include flexColumn;
+    margin-top: 2em;
+    &::before{
+      content: '';
+      width: 300px;
+      height: 200px;
+      background-color: $primaryColor;
+      position: absolute;
+      top: -1em;
+      left: -1em;
+      z-index: 0;
+    }
+    img{
+        width: 400px;
+        height: 426px;
+        z-index: 2;
+      }
+  }
+}
+//Main
+main{
+  padding-top: 100px;
+}
+//SectionTitle
+.sectionTitle{
+  @extend .relative;
+  &::before{
+    content: '';
+    background-color: $primaryColor;
+    width: 4rem;
+    height: 3px;
+    position: absolute;
+    top: .8em;
+  }
+  &__text{
+    margin-left: 5rem;
+  }
+}
+//TeamSection
+.team{
+  @include flex;
+  margin-top: 2em;
+  @extend .mb;
+  gap: 0;
+  &__introduction{
+    @include btn;
+    @include flexColumn;
+    padding: 2em;
+    height: 450px;
+    width: 30%;
+    justify-content: space-around;
+    &--img{
+      img{
+        width: 150px;
+      }
+    }
+    &--text{
+      font-size: 1.2rem;
+    }
+  }
+  &__image{
+    width: 70%;
+    height: 450px;
+    &--row{
+      @include flex;
+      gap: 0;
+      width: 100%;
+      height: 225px;
+      overflow: hidden;
+      figure{
+        @extend .relative;
+        width: 33.3%;
+        img{
+          width: 100%;
+        }
+        div{
+          @include btn;
+          @include flexColumn;
+          @extend .transition;
+          @extend .pointer;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          opacity: 0;
+          z-index: 0;
+          &:hover{
+            opacity: .7;
+          }
+          p{
+            font-size: .8rem;
+          }
+        }
+      }
+    }
+  }
+}
+//CommentSection
+.sectionTitleContainer{
+  @include flex;
+  .dotContainer{
+    @include flex;
+    margin-right: 200px;
+    gap: 8px;
+    .dotActive{
+      @extend .pointer;
+      @include dot;
+      background-color: $primaryColor;
+    }
+    .dot{
+      @extend .pointer;
+      @include dot;
+      background-color: $grayColor;
+    }
+  }
+}
+.commentsContainer{
+  @include flex;
+  .comment{
+    @include flexColumn;
+    width: 30%;
+    box-shadow: 2px 2px 20px $lightGrayColor;
+    padding: 1em;
+    &__person{
+      @include flex;
+      justify-content: flex-start;
+      &--name{
+        h4{
+          margin-bottom: .5em;
+        }
+        p{
+          font-size: .9rem;
+          color: $grayColor;
+        }
+      }
+    }
+    &__text{
+      font-size: .9rem;
+      color: $darkGrayColor;
+    }
+    &__rate{
+      @include flex;
+      justify-content: flex-start;
+      gap: .3em;
+      li{
+        list-style: none;
+        a{
+          color: $primaryColor;
+        }
+      }
+    }
+  }
+}
+.btnComments{
+  @extend .my;
+  @extend .mb;
+  &__prev{
+    @extend .pointer;
+    background-color: $lightGrayColor;
+    color: $blackColor;
+    padding: .7em 1em;
+  }
+  &__next{
+    @include btn;
+    @extend .pointer;
+    margin-left: 1em;
+  }
+}
+//Work Section
+.workSection{
+  background: url("../assets/img/bg.png");
+  padding: 50px 0;
+}
+.ourWork{
+  @include flex;
+  align-items: flex-start;
+  gap: 0;
+  margin-top: 100px;
+  article{
+    width: 33.3%;
+  }
+  .architectural{
+    @include flexColumn;
+    &__title{
+      line-height: 1.5em;
+      @extend .relative;
+      ::before{
+        content: url("../assets/img/01..png");
+        position: absolute;
+        top: 15%;
+        left: 110px;
+      }
+    }
+    &__line{
+      height: 2px;
+      background-color: $lightGrayColor;
+    }
+    &__article{
+      @include flexColumn;
+      gap: 0;
+      &--title{
+        line-height: 1.2em;
+        @include flex;
+        justify-content: flex-start;
+        span{
+          width: 6px;
+          height: 6px;
+          background-color: $whiteColor;
+          border: 6px solid $primaryColor;
+          box-sizing: content-box;
+        }
+      }
+      &--text{
+        @include flexColumn;
+        padding: 1em 3em 0;
+        font-size: .8rem;
+        color: $darkGrayColor;
+        border-left: 1px solid $lightGrayColor;
+        margin-left: .7em;
+      }
+    }
+  }
+}
+.interior{
+  ::before{
+    content: url("../assets/img/02..png") !important;
+    position: absolute;
+    top: 15%;
+    left: 60px !important;
+  }
+}
+.commercial {
+  ::before {
+    content: url("../assets/img/03..png") !important;
+    position: absolute;
+    top: 15%;
+    left: 122px !important;
+  }
+}
+//Animate
+.show{
+  animation: move .5s;
+}
+.hide{
+  animation: moveBack .5s;
+}
+@keyframes move {
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+@keyframes moveBack {
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+//Responsive
+@media (max-width: 768px) {
+    .openMenu {
+      display: block;
+    }
+    .navbar {
+      display: none;
+    }
+    .banner__textContainer {
+      width: 100%;
+
+      &--title {
+        font-size: 40px;
+      }
+    }
+    .banner__img {
+      margin-top: 1em;
+      align-items: center;
+      width: 100%;
+
+      &::before {
+        content: '';
+        width: 100%;
+        height: 228px;
+        background-color: $primaryColor;
+        position: absolute;
+        top: 15%;
+        left: 0;
+        right: 0;
+        z-index: 0;
+      }
+
+      img {
+        width: 328px;
+        height: 338px;
+      }
+    }
+    .team {
+      &__introduction {
+        width: 100%;
+      }
+
+      &__image {
+        width: 100%;
+        height: 450px;
+        @include flex;
+        gap: 0;
+
+        &--row {
+          @include flexColumn;
+          gap: 0;
+          height: 450px;
+          width: 50%;
+
+          figure {
+            width: 100%;
+            height: 150px;
+          }
+        }
+      }
+    }
+    .comment {
+      width: 100% !important;
+
+      &:not(:first-child) {
+        display: none;
+      }
+    }
+    .dotContainer {
+      display: none !important;
+    }
+    .btnComments {
+      @include flex;
+      justify-content: center;
+      gap: 0;
+    }
+    .ourWork {
+      @include flexColumn;
+      gap: 3em;
+
+      article {
+        width: 100%;
+      }
+    }
+}
