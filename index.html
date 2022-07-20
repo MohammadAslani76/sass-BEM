@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Navax</title>
     <link rel="stylesheet" href="assets/font-awesome-5/font-awesome/all.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link rel="stylesheet" href="scss/main.css">
 </head>
 <body>
@@ -31,6 +32,7 @@
                 <button class="pointer menu__footer--btn">Register / Login</button>
             </div>
         </section>
+        <div class="menu__background"></div>
         <nav class="container navbar">
             <a href="#" class="navbar__brand">
                 IN.DESIGN
@@ -131,69 +133,109 @@
                     <div class="dot"></div>
                 </div>
             </div>
-            <article class="commentsContainer">
-                <div class="comment">
-                    <div class="comment__person">
-                        <figure class="comment__person--img">
-                            <img src="assets/img/comment.png" alt="Comment">
-                        </figure>
-                        <div class="comment__person--name">
-                            <h4>Sara Cristian</h4>
-                            <p>Nationvide group</p>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="comment swiper-slide">
+                        <div class="comment__person">
+                            <figure class="comment__person--img">
+                                <img src="assets/img/comment.png" alt="Comment">
+                            </figure>
+                            <div class="comment__person--name">
+                                <h4>Sara Cristian</h4>
+                                <p>Nationvide group</p>
+                            </div>
                         </div>
+                        <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
+                        <ul class="comment__rate">
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                        </ul>
                     </div>
-                    <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
-                    <ul class="comment__rate">
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                    </ul>
-                </div>
-                <div class="comment">
-                    <div class="comment__person">
-                        <figure class="comment__person--img">
-                            <img src="assets/img/comment2.png" alt="Comment">
-                        </figure>
-                        <div class="comment__person--name">
-                            <h4>Ali Cristian</h4>
-                            <p>Nationvide group</p>
+                    <div class="comment swiper-slide">
+                        <div class="comment__person">
+                            <figure class="comment__person--img">
+                                <img src="assets/img/comment2.png" alt="Comment">
+                            </figure>
+                            <div class="comment__person--name">
+                                <h4>Ali Cristian</h4>
+                                <p>Nationvide group</p>
+                            </div>
                         </div>
+                        <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
+                        <ul class="comment__rate">
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                        </ul>
                     </div>
-                    <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
-                    <ul class="comment__rate">
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                    </ul>
-                </div>
-                <div class="comment">
-                    <div class="comment__person">
-                        <figure class="comment__person--img">
-                            <img src="assets/img/comment3.png" alt="Comment">
-                        </figure>
-                        <div class="comment__person--name">
-                            <h4>Maryam Cristian</h4>
-                            <p>Nationvide group</p>
+                    <div class="comment swiper-slide">
+                        <div class="comment__person">
+                            <figure class="comment__person--img">
+                                <img src="assets/img/comment3.png" alt="Comment">
+                            </figure>
+                            <div class="comment__person--name">
+                                <h4>Maryam Cristian</h4>
+                                <p>Nationvide group</p>
+                            </div>
                         </div>
+                        <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
+                        <ul class="comment__rate">
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                        </ul>
                     </div>
-                    <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
-                    <ul class="comment__rate">
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                        <li><a href="#" class="fas fa-star"></a></li>
-                    </ul>
+                    <div class="comment swiper-slide">
+                        <div class="comment__person">
+                            <figure class="comment__person--img">
+                                <img src="assets/img/comment2.png" alt="Comment">
+                            </figure>
+                            <div class="comment__person--name">
+                                <h4>Ali Cristian</h4>
+                                <p>Nationvide group</p>
+                            </div>
+                        </div>
+                        <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
+                        <ul class="comment__rate">
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                        </ul>
+                    </div>
+                    <div class="comment swiper-slide">
+                        <div class="comment__person">
+                            <figure class="comment__person--img">
+                                <img src="assets/img/comment3.png" alt="Comment">
+                            </figure>
+                            <div class="comment__person--name">
+                                <h4>Maryam Cristian</h4>
+                                <p>Nationvide group</p>
+                            </div>
+                        </div>
+                        <p class="comment__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem corporis dicta ducimus eaque exercitationem iste laborum nihil numquam unde voluptates?</p>
+                        <ul class="comment__rate">
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                            <li><a href="#" class="fas fa-star"></a></li>
+                        </ul>
+                    </div>
                 </div>
-            </article>
-            <article class="btnComments">
+            </div>
+            <div class="btnComments">
                 <i class="fas fa-angle-left btnComments__prev"></i>
                 <i class="fas fa-angle-right btnComments__next"></i>
-            </article>
+            </div>
         </section>
         <!--            Work Section-->
         <section class="workSection">
@@ -333,8 +375,29 @@
                 </div>
             </div>
         </section>
+        <section class="requestSection">
+            <div class="container">
+                <figure class="ourWork__img">
+                    <img src="assets/img/home.png" alt="home">
+                </figure>
+                <div class="request">
+                    <article class="sectionTitle">
+                        <h2 class="sectionTitle__text" id="h2">Get a free consultation. <br>
+                            Just leave a request below
+                        </h2>
+                    </article>
+                    <form class="request__form">
+                        <input type="text" class="request__form--input" placeholder="Your phone number">
+                        <button class="pointer banner__textContainer--btn">
+                            <span>Callback</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
     </main>
-
+    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
 <script src="js/app.js"></script>
 </body>
 </html>

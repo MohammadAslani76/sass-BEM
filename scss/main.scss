@@ -14,8 +14,9 @@
   cursor: pointer;
 }
 .container{
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+  max-width: 1170px;
 }
 .transition{
   transition: all .3s;
@@ -29,7 +30,7 @@
 .mb{
   margin-bottom: 7em;
 }
-.p{
+.p {
   padding: 1em;
 }
 body{overflow-x: hidden}
@@ -53,7 +54,18 @@ header{
   width: 288px;
   height: 100vh;
   z-index: 1000;
-  display: none;
+  transform: scaleX(0);
+  transition: all .3s;
+  &__background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $darkGrayColor;
+    z-index: 50;
+    display: none;
+  }
   &__header{
     @include flex;
     background: url("../assets/img/bg.png");
@@ -86,6 +98,9 @@ header{
       @include btn;
     }
   }
+}
+.show{
+  transform: scaleX(1);
 }
 .navbar{
   @include flex;
@@ -246,11 +261,9 @@ main{
     }
   }
 }
-.commentsContainer{
-  @include flex;
   .comment{
     @include flexColumn;
-    width: 30%;
+    height: 90%;
     box-shadow: 2px 2px 20px $lightGrayColor;
     padding: 1em;
     &__person{
@@ -282,7 +295,7 @@ main{
       }
     }
   }
-}
+
 .btnComments{
   @extend .my;
   @extend .mb;
@@ -298,6 +311,12 @@ main{
     margin-left: 1em;
   }
 }
+//Swiper
+.swiper {
+  width: 100%;
+  height: 370px;
+  margin: 30px auto;
+}
 //Work Section
 .workSection{
   background: url("../assets/img/bg.png");
@@ -308,6 +327,7 @@ main{
   align-items: flex-start;
   gap: 0;
   margin-top: 100px;
+  //position: relative;
   article{
     width: 33.3%;
   }
@@ -352,6 +372,15 @@ main{
       }
     }
   }
+  &__img{
+    width: 700px;
+    height: 500px;
+    transform: translate(400px, -170px);
+    img{
+      width: 700px;
+      height: 500px;
+    }
+  }
 }
 .interior{
   ::before{
@@ -369,31 +398,30 @@ main{
     left: 122px !important;
   }
 }
-//Animate
-.show{
-  animation: move .5s;
-}
-.hide{
-  animation: moveBack .5s;
-}
-@keyframes move {
-  from{
-    opacity: 0;
-  }
-  to{
-    opacity: 1;
-  }
-}
-@keyframes moveBack {
-  from{
-    opacity: 1;
-  }
-  to{
-    opacity: 0;
+//Request Section
+.request{
+  @include flexColumn;
+  width: 870px;
+  z-index: 10 !important;
+  padding: 40px;
+  box-shadow: 2px 2px 20px $lightGrayColor;
+  background-color: $whiteColor;
+  transform: translateY(-290px);
+  &__form{
+    @include flex;
+    &--input{
+      border: 1px solid $lightGrayColor;
+      width: 75%;
+      padding: .7em 1em;
+    }
   }
 }
+
 //Responsive
 @media (max-width: 768px) {
+  .container{
+    width: 90%;
+  }
     .openMenu {
       display: block;
     }
@@ -454,11 +482,7 @@ main{
       }
     }
     .comment {
-      width: 100% !important;
-
-      &:not(:first-child) {
-        display: none;
-      }
+      width: 100%;
     }
     .dotContainer {
       display: none !important;
@@ -475,5 +499,35 @@ main{
       article {
         width: 100%;
       }
+      &__img{
+        transform: translate(0,0);
+        width: 100%;
+        text-align: center;
+        img{
+          width: 318px;
+          height: 217px;
+        }
+      }
     }
+  .request{
+    width: 328px;
+    margin: 0 auto;
+    transform: translate(0,-200px);
+    &__form{
+      &--input{
+        width: 100%;
+      }
+      button{
+        width: 100%;
+      }
+    }
+  }
+}
+@media (min-width: 768px) {
+  .menu{
+    transform: scaleX(0);
+  }
+  .menu__background{
+    display: none !important;
+  }
 }

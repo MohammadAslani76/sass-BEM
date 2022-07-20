@@ -13,8 +13,9 @@
 }
 
 .container {
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
+  max-width: 1170px;
 }
 
 .transition, .team__image--row figure div, .navbar__link {
@@ -61,6 +62,17 @@ header {
   width: 288px;
   height: 100vh;
   z-index: 1000;
+  transform: scaleX(0);
+  transition: all 0.3s;
+}
+.menu__background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #666666;
+  z-index: 50;
   display: none;
 }
 .menu__header {
@@ -96,6 +108,10 @@ header {
   background-color: #0D6B6A;
   color: #fff;
   padding: 0.7em 1em;
+}
+
+.show {
+  transform: scaleX(1);
 }
 
 .navbar {
@@ -304,24 +320,17 @@ main {
   background-color: #AAAAAA;
 }
 
-.commentsContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 2em;
-  flex-wrap: wrap;
-}
-.commentsContainer .comment {
+.comment {
   display: flex;
   flex-direction: column;
   justify-content: center;
   gap: 2em;
   flex-wrap: wrap;
-  width: 30%;
+  height: 90%;
   box-shadow: 2px 2px 20px #DDDDDD;
   padding: 1em;
 }
-.commentsContainer .comment__person {
+.comment__person {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -329,18 +338,18 @@ main {
   flex-wrap: wrap;
   justify-content: flex-start;
 }
-.commentsContainer .comment__person--name h4 {
+.comment__person--name h4 {
   margin-bottom: 0.5em;
 }
-.commentsContainer .comment__person--name p {
+.comment__person--name p {
   font-size: 0.9rem;
   color: #AAAAAA;
 }
-.commentsContainer .comment__text {
+.comment__text {
   font-size: 0.9rem;
   color: #666666;
 }
-.commentsContainer .comment__rate {
+.comment__rate {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -349,10 +358,10 @@ main {
   justify-content: flex-start;
   gap: 0.3em;
 }
-.commentsContainer .comment__rate li {
+.comment__rate li {
   list-style: none;
 }
-.commentsContainer .comment__rate li a {
+.comment__rate li a {
   color: #0D6B6A;
 }
 
@@ -366,6 +375,12 @@ main {
   color: #fff;
   padding: 0.7em 1em;
   margin-left: 1em;
+}
+
+.swiper {
+  width: 100%;
+  height: 370px;
+  margin: 30px auto;
 }
 
 .workSection {
@@ -442,6 +457,15 @@ main {
   border-left: 1px solid #DDDDDD;
   margin-left: 0.7em;
 }
+.ourWork__img {
+  width: 700px;
+  height: 500px;
+  transform: translate(400px, -170px);
+}
+.ourWork__img img {
+  width: 700px;
+  height: 500px;
+}
 
 .interior ::before {
   content: url("../assets/img/02..png") !important;
@@ -457,31 +481,36 @@ main {
   left: 122px !important;
 }
 
-.show {
-  animation: move 0.5s;
+.request {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2em;
+  flex-wrap: wrap;
+  width: 870px;
+  z-index: 10 !important;
+  padding: 40px;
+  box-shadow: 2px 2px 20px #DDDDDD;
+  background-color: #fff;
+  transform: translateY(-290px);
+}
+.request__form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+.request__form--input {
+  border: 1px solid #DDDDDD;
+  width: 75%;
+  padding: 0.7em 1em;
 }
 
-.hide {
-  animation: moveBack 0.5s;
-}
-
-@keyframes move {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-@keyframes moveBack {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
 @media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
   .openMenu {
     display: block;
   }
@@ -542,10 +571,7 @@ main {
     height: 150px;
   }
   .comment {
-    width: 100% !important;
-  }
-  .comment:not(:first-child) {
-    display: none;
+    width: 100%;
   }
   .dotContainer {
     display: none !important;
@@ -569,6 +595,34 @@ main {
   }
   .ourWork article {
     width: 100%;
+  }
+  .ourWork__img {
+    transform: translate(0, 0);
+    width: 100%;
+    text-align: center;
+  }
+  .ourWork__img img {
+    width: 318px;
+    height: 217px;
+  }
+  .request {
+    width: 328px;
+    margin: 0 auto;
+    transform: translate(0, -200px);
+  }
+  .request__form--input {
+    width: 100%;
+  }
+  .request__form button {
+    width: 100%;
+  }
+}
+@media (min-width: 768px) {
+  .menu {
+    transform: scaleX(0);
+  }
+  .menu__background {
+    display: none !important;
   }
 }
 
