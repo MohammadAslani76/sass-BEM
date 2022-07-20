@@ -33,6 +33,12 @@
 .p {
   padding: 1em;
 }
+.icon{
+  padding: 1em;
+  background-color: $whiteOpacityColor;
+  border-radius: 50%;
+  cursor: pointer;
+}
 body{overflow-x: hidden}
 //Header
 header{
@@ -62,7 +68,8 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: $darkGrayColor;
+    background-color: $blackColor;
+    opacity: .8;
     z-index: 50;
     display: none;
   }
@@ -416,6 +423,79 @@ main{
     }
   }
 }
+//Footer
+footer{
+  @include flexColumn;
+  gap: 0;
+  padding: 70px 0 0 0;
+  background-color: $primaryColor;
+  .footer__line{
+    img{
+      width: 100%;
+    }
+  }
+  .footerSection{
+    @include flexColumn;
+    gap: 3em;
+    align-items: center;
+    transform: translateY(-150px);
+    &__brand{
+      color: $whiteColor;
+      font-size: 28px;
+    }
+    &__text{
+      color: $whiteColor;
+      text-align: center;
+      line-height: 25px;
+      width: 80%;
+    }
+    &__icons{
+      @include flex;
+      gap: 1em;
+      figure{
+        @extend .icon;
+      }
+    }
+    &__links{
+      @include flex;
+      width: 100%;
+      li{
+        list-style: none;
+        a{
+          color: $whiteColor;
+          font-size: 18px;
+        }
+      }
+    }
+    &__about{
+      @include flex;
+      width: 100%;
+    }
+    .aboutFooter{
+      @include flex;
+      gap: 3em;
+      &__connect{
+        @include flex;
+        gap: 1em;
+        &--icon{
+          @extend .icon;
+        }
+        &--text{
+          color: $whiteColor;
+          line-height: 25px;
+          h4{
+            font-weight: 600;
+            font-size: 18px;
+          }
+        }
+      }
+      &__link{
+        color: $whiteColor;
+        text-decoration: underline;
+      }
+    }
+  }
+}
 
 //Responsive
 @media (max-width: 768px) {
@@ -519,6 +599,33 @@ main{
       }
       button{
         width: 100%;
+      }
+    }
+  }
+  .footerSection{
+    transform: translateY(0) !important;
+    padding-bottom: 50px;
+    &__text{
+      width: 90% !important;
+    }
+    &__icons{
+      width: 100%;
+      gap: 0 !important;
+      figure{
+        padding: .5em;
+      }
+    }
+    &__links{
+      @include flexColumn;
+    }
+    &__about{
+      @include flexColumn;
+    }
+    .aboutFooter{
+      @include flexColumn;
+      &__connect{
+        @include flexColumn;
+        text-align: center;
       }
     }
   }
