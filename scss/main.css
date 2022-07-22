@@ -569,7 +569,6 @@ footer .footerSection__links li {
 }
 footer .footerSection__links li a {
   color: rgb(255, 255, 255);
-  font-size: 18px;
 }
 footer .footerSection__about {
   display: flex;
@@ -601,11 +600,11 @@ footer .footerSection .aboutFooter__connect--text {
 }
 footer .footerSection .aboutFooter__connect--text h4 {
   font-weight: 600;
-  font-size: 18px;
 }
 footer .footerSection .aboutFooter__link {
   color: rgb(255, 255, 255);
   text-decoration: underline;
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {

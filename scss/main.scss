@@ -463,7 +463,6 @@ footer{
         list-style: none;
         a{
           color: $whiteColor;
-          font-size: 18px;
         }
       }
     }
@@ -485,13 +484,13 @@ footer{
           line-height: 25px;
           h4{
             font-weight: 600;
-            font-size: 18px;
           }
         }
       }
       &__link{
         color: $whiteColor;
         text-decoration: underline;
+        font-size: .9rem;
       }
     }
   }
